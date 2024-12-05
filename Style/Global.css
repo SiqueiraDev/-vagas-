@@ -1,0 +1,231 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-header: #f8f9fa;
+    --bg-primary: #ffffff;
+    --bg-second: #eff3f7;
+    --accent-color: #007BFF;
+    --accent-hover: #0056b3;
+    --text-color: #212529;
+    --title-color: #343a40;
+    --border-color: #ced4da;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --footer-bg: #343a40;
+    --footer-text: #ffffff;
+}
+
+body {
+    background-color: var(--bg-primary);
+    font-family: 'Arial', sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+header {
+    background-color: var(--bg-header);
+    padding: 15px 20px;
+    box-shadow: 0 2px 4px var(--shadow-color);
+    z-index: 1;
+}
+
+header nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    list-style: none;
+}
+
+header nav ul li {
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    color: var(--title-color);
+    transition: color 0.3s ease;
+}
+
+header nav ul li:hover {
+    color: var(--accent-color);
+}
+
+main section {
+    text-align: center;
+    padding: 40px 20px;
+    font-size: 1.8rem;
+    color: var(--title-color);
+    font-weight: bold;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 10px;
+}
+
+.info-box {
+    background-color: var(--bg-second);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px var(--shadow-color);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px var(--shadow-color);
+}
+
+.info-box .imagem {
+    display: flex;
+    justify-content: center;
+    background-color: var(--bg-header);
+    padding: 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.info-box img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.info-box .titulo {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--title-color);
+    margin: 15px 0;
+}
+
+.info-box .descricao {
+    font-size: 1rem;
+    color: var(--text-color);
+    margin: 10px 0 20px;
+    padding: 0 10px;
+}
+
+.btn-info {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn-info:hover {
+    background-color: var(--accent-hover);
+}
+
+.mais-info {
+    background-color: var(--bg-header);
+    color: var(--text-color);
+    padding: 10px 15px;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    display: none;
+}
+
+.info-box.active .mais-info {
+    display: block;
+}
+
+footer {
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
+    text-align: center;
+    padding: 20px 10px;
+    font-size: 0.9rem;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-content nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.footer-content nav ul li a {
+    color: var(--footer-text);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.footer-content nav ul li a:hover {
+    color: var(--accent-color);
+}
+
+.social-media a {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.social-media img {
+    width: 25px;
+    height: 25px;
+    transition: transform 0.3s ease;
+}
+
+.social-media img:hover {
+    transform: scale(1.2);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header nav ul {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .container {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 15px;
+    }
+
+    footer .footer-content {
+        text-align: center;
+    }
+
+    footer .footer-content nav ul {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .info-box img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .btn-info {
+        padding: 8px 15px;
+        font-size: 0.8rem;
+    }
+
+    footer {
+        font-size: 0.8rem;
+    }
+}
